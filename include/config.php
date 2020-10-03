@@ -14,7 +14,7 @@ $testimonialtarget = "../public/image/testimonial/";
 $client_logotarget = "../image/client_logo/";
 $target_service = "../public/image/service/";
 
-$baseurl = 'http://'.$_SERVER['HTTP_HOST'].'GIT-DEVELOPMENT/stoke-management-ERP/';
+$baseurl = 'http://'.$_SERVER['HTTP_HOST'].'GIT-DEVELOPMENT/niktech_product_list/niktech_stoke_management_erp/';
 $homelsiderimg = $baseurl.'/image/home_slider/';
 $homeminiblock = $baseurl.'/image/home_mini_block/';
 $homeblock = $baseurl.'/image/home-block/';

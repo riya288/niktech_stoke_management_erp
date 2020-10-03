@@ -37,10 +37,10 @@
                                 </ul>
                                 
                             </li>
-                            <li class="has_sub">
+                            <!-- <li class="has_sub">
                                 <a href="email.php" class="waves-effect"><i class="fa fa-first-order"></i><span>Mail</span> </a>
                                 
-                            </li>
+                            </li> -->
 
                           <!--   <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-first-order"></i><span> Purchase </span> <span class="menu-arrow"></span></a>

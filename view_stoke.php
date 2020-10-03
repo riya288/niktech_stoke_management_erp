@@ -103,11 +103,9 @@ include_once('include/input_validation.php');
                               <thead>
                                  <tr>
                                     <th>Sr No</th>
-                                    <th>Site</th>
-                                    <th>Date</th>
-                                    <th>Agency</th>
-                                    <th>Item</th>
-                                    <th>Amount</th>
+                                    <th>Product</th>
+                                    <th>Total</th>
+                                    <th>Available</th>
                                  </tr>
                               </thead>
                               <tbody id="avilable">
@@ -130,22 +128,20 @@ include_once('include/input_validation.php');
       <!-- START Footerscript -->
       <?php require_once('include/footerscript.php'); ?>
 <script>
-  function myfunction(){
-      var from_dt = ('#from_dt').val();
-      var to_dt = ('#to_dt').val();
+ $('#product').on("change",function() {
+      var category_id = this.value;
       $.ajax({
-        url: "view_product.php",
+        url: "get_available.php",
         type: "POST",
         data: {
-          from_dt: from_dt
-          to_dt: to_dt
+          category_id: category_id
         },
         cache: false,
         success: function(dataResult){
-          $("#product").html(dataResult);
+          $("#avilable").html(dataResult);
         }
       });
-  }
+  });
 </script>
       
    </body>

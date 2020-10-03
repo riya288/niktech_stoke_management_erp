@@ -61,15 +61,17 @@
           $cgst = $_POST['cgst'];
           $sgst = $_POST['sgst'];
           $total_gst = $_POST['total_gst'];
-         
-          $query=mysqli_query($connect,"INSERT INTO add_product (bill_to,name,address,invoice_no,invoice_date,po_no,state_code,category,gst_no,stoke,sub_category,product,sub_sub_category,qty,rate,total,tax,cgst,sgst,total_gst,dt_created) VALUES('$bill_to','$name','$address','$invoice_no','$invoice_date','$po_no','$state_code','$category','$gst_no','$stoke','$sub_category','$product','$sub_sub_category','$qty','$rate','$total','$tax','$cgst','$sgst','$total_gst','$date')");
-
+          
           $query1 = "SELECT * FROM add_stoke WHERE product = '$product'";
           $result1 = mysqli_query($connect, $query1);
           $row = mysqli_fetch_assoc($result1);
           $stoke = $row['stoke'];
           $available = $stoke - $qty;
           $queryUpdate = mysqli_query($connect,"UPDATE add_stoke SET available = '$available',dt_updated = '$date' WHERE product = '$product'");
+         
+          $query=mysqli_query($connect,"INSERT INTO add_product (bill_to,name,address,invoice_no,invoice_date,po_no,state_code,category,gst_no,stoke,sub_category,product,sub_sub_category,qty,rate,total,tax,cgst,sgst,total_gst,dt_created) VALUES('$bill_to','$name','$address','$invoice_no','$invoice_date','$po_no','$state_code','$category','$gst_no','$stoke','$sub_category','$product','$sub_sub_category','$qty','$rate','$total','$tax','$cgst','$sgst','$total_gst','$date')");
+
+          
 
         }
     header('location: '.$location.'add_product.php'); 

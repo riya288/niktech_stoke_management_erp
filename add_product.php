@@ -164,7 +164,7 @@ if (isset($_GET['hId']) && !empty($_GET['hId'])) {
                                         </div>
                                          <div class="col-md-3">
                                              <div class="form-group" id="stoke">
-                                                 <label for="userName">Available Stoke<span class="text-danger">*</span></label>
+                                                
                                              </div>
                                          </div>
                                      </div>
@@ -178,43 +178,7 @@ if (isset($_GET['hId']) && !empty($_GET['hId'])) {
                                            </div>
                                        </div>
                                         <div class="col-md-6">
-                                          <div class="form-group">
-                                             <label for="product">Product Name<span class="text-danger">*</span></label>
-                                              <select class="form-control select2" name="product" id="product">
-                                                   
-                                               </select>
-                                          </div>
-                                       </div>
-                                     </div>
-                                     <div class="row">
-                                       <div class="col-md-6">
                                            <div class="form-group">
-                                               <label for="userName">Select Sub Sub Category<span class="text-danger">*</span></label>
-                                               <select class="form-control select2" name="sub_sub_category" id="sub_sub_category">
-                                                  
-                                               </select>
-                                           </div>
-                                       </div>
-                                       <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="qty">Qty<span class="text-danger">*</span></label>
-                                                <input type="text" name="qty" value="<?php if(isset($qty) && !empty($qty)) {echo $qty;} ?>" parsley-trigger="change"  placeholder="Qty" class="form-control new" id="qty">
-                                            </div>
-                                        </div>
-                                         <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="rate">Rate<span class="text-danger">*</span></label>
-                                                <input type="text" name="rate" value="<?php if(isset($rate) && !empty($rate)) {echo $rate;} ?>" parsley-trigger="change"  placeholder="RS..." class="form-control new" id="rate">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="total">Total Amount<span class="text-danger">*</span></label>
-                                                <input type="text" id="total" name="total" value="<?php if(isset($total) && !empty($total)) {echo $total;} ?>" parsley-trigger="change"  class="form-control" placeholder="RS...">
-                                            </div>
-                                        </div>
-                                         <div class="col-md-6">
-                                             <div class="form-group">
                                                  <label for="userName">Select Tax<span class="text-danger">*</span></label>
                                                  <select class="form-control select2 select" name="tax">
                                                      <option>Please choose</option>
@@ -230,25 +194,62 @@ if (isset($_GET['hId']) && !empty($_GET['hId'])) {
                                                  </select>
                                                   <input type="hidden" name="check" value="<?php if (isset($id) &&!empty($id)) { echo $id; } ?>">
                                              </div>
-                                         </div>
-                                         <div id="gst">
+                                       </div>
+                                     </div>
+                                     <div class="row">
+                                       <div class="col-md-6">
+                                           <div class="form-group">
+                                               <label for="userName">Select Sub Sub Category<span class="text-danger">*</span></label>
+                                               <select class="form-control select2" name="sub_sub_category" id="sub_sub_category">
+                                                  
+                                               </select>
+                                           </div>
+                                       </div>
+                                        
+                                           <div id="gst">
                                             <div class="col-md-2">
                                               <div class="form-group">
                                                   <label for="userName">CGST<span class="text-danger">*</span></label>
-                                                  <input type="text" name="cgst" id="cgst" value="<?php if(isset($cgst) && !empty($cgst)) {echo $cgst;} ?>" class="form-control" onkeyup="myfunction()">
+                                                  <input type="text" name="cgst" id="cgst" value="0<?php if(isset($cgst) && !empty($cgst)) {echo $cgst;} ?>" class="form-control" onkeyup="myfunction()">
                                                 </div>
                                             </div>
                                            <div class="col-md-2">
                                               <div class="form-group">
                                                   <label for="userName">SGST<span class="text-danger">*</span></label>
-                                                  <input type="text" name="sgst" id="sgst" value="<?php if(isset($sgst) && !empty($sgst)) {echo $sgst;} ?>" class="form-control" onkeyup="myfunction()">
+                                                  <input type="text" name="sgst" id="sgst" value="<?php if(isset($sgst) && !empty($sgst)) {echo $sgst;}else{ echo "0"; } ?>" class="form-control" onkeyup="myfunction()">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                               <div class="form-group">
                                                   <label for="userName">Total GST<span class="text-danger">*</span></label>
-                                                  <input type="text" name="total_gst" id="total_gst" value="<?php if(isset($total_gst) && !empty($total_gst)) {echo $total_gst;} ?>" class="form-control" readonly>
+                                                  <input type="text" name="total_gst" id="total_gst" value="<?php if(isset($total_gst) && !empty($total_gst)) {echo $total_gst;}else{ echo "0"; } ?>" class="form-control" readonly>
                                                 </div>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                                          <div class="form-group">
+                                             <label for="product">Product Name<span class="text-danger">*</span></label>
+                                              <select class="form-control select2" name="product" id="product">
+                                                   
+                                               </select>
+                                          </div>  
+                                         </div>
+                                         <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="qty">Qty<span class="text-danger">*</span></label>
+                                                <input type="text" name="qty" value="<?php if(isset($qty) && !empty($qty)) {echo $qty;}else{ echo "0"; } ?>" parsley-trigger="change"  placeholder="Qty" class="form-control new" id="qty">
+                                            </div>
+                                        </div>
+                                         <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="rate">Rate<span class="text-danger">*</span></label>
+                                                <input type="text" name="rate" value="<?php if(isset($rate) && !empty($rate)) {echo $rate;}else{ echo "0"; } ?>" parsley-trigger="change"  placeholder="RS..." class="form-control new" id="rate">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="total">Total Amount<span class="text-danger">*</span></label>
+                                                <input type="text" id="total" name="total" value="<?php if(isset($total) && !empty($total)) {echo $total;}else{ echo "0"; } ?>" parsley-trigger="change"  class="form-control" placeholder="RS...">
                                             </div>
                                         </div>
                                       </div>
